@@ -1,4 +1,4 @@
-package knockdown
+package go_server
 
 import (
     "net/http"
@@ -13,11 +13,11 @@ type Page struct {
     Title string
 }
 
-var viewTemplate = template.Must(template.ParseFiles("knockdown/view.html"))
+var viewTemplate = template.Must(template.ParseFiles("go_server/view.html"))
 
 func handler(w http.ResponseWriter, r *http.Request) {
     newPage := Page{
-        Title: "knockdown",
+        Title: "GoKnockDown",
     }
     err := viewTemplate.Execute(w, newPage)
     if err != nil {
